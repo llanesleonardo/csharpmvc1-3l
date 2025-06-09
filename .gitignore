@@ -1,0 +1,70 @@
+## Ignore build outputs
+bin/
+obj/
+out/
+
+## Ignore Rider & VS Code IDE configs
+.idea/
+.vscode/
+.vs/
+
+## User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Dotnet artifacts
+*.dll
+*.exe
+*.pdb
+*.cache
+*.log
+
+## Auto-generated files
+*.dbmdl
+*.bak
+*.backup
+*.tmp
+*.temp
+
+## Logs and database files
+*.log
+*.sql
+*.sqlite
+*.mdf
+*.ldf
+
+## Environment files
+.env
+.env.*
+
+## Publish output
+publish/
+*.Publish.xml
+
+## NuGet
+*.nupkg
+.nuget/
+packages/
+
+## Azure settings
+App_Data/
+appsettings.Development.json
+secrets.json
+
+## Web config and temp
+wwwroot/dist/
+wwwroot/node_modules/
+
+## Node and npm (if using Tailwind or similar)
+node_modules/
+package-lock.json
+
+## OS files
+.DS_Store
+Thumbs.db
+
+## Others
+*.swp
+*.swo
