@@ -9,6 +9,9 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
+builder.Services.AddControllersWithViews(); // ✅ Enables Razor Views
+
 // Set the HTTP port
 if (builder.Environment.IsDevelopment())
 {
@@ -18,11 +21,17 @@ if (builder.Environment.IsDevelopment())
     });
 }
 else
-{ 
+{
     var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
     builder.WebHost.UseUrls($"http://*:{port}");
 }
 
+// 🔽 Add this code right after creating the builder
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true)
+    .AddEnvironmentVariables();
 
 builder.Services.AddEndpointsApiExplorer(); // <-- REQUIRED for Swagger to find endpoints
 builder.Services.AddSwaggerGen(options =>

@@ -64,5 +64,5 @@ jobs:
         with:
           app-name: 'csharpmvc1-3l'
           slot-name: 'Production'
-          package: .
+          package: './.net-app'  # or just the folder where artifact is downloaded
           
