@@ -12,10 +12,15 @@ var builder = WebApplication.CreateBuilder(args);
 // Set the HTTP port
 if (builder.Environment.IsDevelopment())
 {
-builder.WebHost.ConfigureKestrel(serverOptions =>
-{
-    serverOptions.ListenAnyIP(5050);
-});
+    builder.WebHost.ConfigureKestrel(serverOptions =>
+    {
+        serverOptions.ListenAnyIP(5050);
+    });
+}
+else
+{ 
+    var port = Environment.GetEnvironmentVariable("PORT") ?? "8080";
+    builder.WebHost.UseUrls($"http://*:{port}");
 }
 
 
