@@ -10,10 +10,14 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 // Set the HTTP port
+if (builder.Environment.IsDevelopment())
+{
 builder.WebHost.ConfigureKestrel(serverOptions =>
 {
     serverOptions.ListenAnyIP(5050);
 });
+}
+
 
 builder.Services.AddEndpointsApiExplorer(); // <-- REQUIRED for Swagger to find endpoints
 builder.Services.AddSwaggerGen(options =>
