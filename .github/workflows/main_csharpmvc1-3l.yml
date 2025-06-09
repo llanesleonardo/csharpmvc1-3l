@@ -53,6 +53,9 @@ jobs:
           client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_EFEADDED64B044C8A2B5F54D02DC2CDD }}
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_95797C10BB3B423F889DDFC18257548A }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_DDA033E1D27246B29492C0E40A2736C6 }}
+      
+      - name: List files after downloading artifact
+        run: ls -la
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -60,4 +63,4 @@ jobs:
         with:
           app-name: 'csharpmvc1-3l'
           slot-name: 'Production'
-          package: './dotnet-app'  # matches the artifact name downloaded folder
+          package: './'  # matches the artifact name downloaded folder
