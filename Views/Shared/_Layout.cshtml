@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] -  MVC Example</title>
+    
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/home/about">About</a></li>
+                <li><a href="/home/services">Services</a></li>
+                <li><a href="/home/contact">Contact</a></li>
+                <!-- Add more nav links here -->
+            </ul>
+        </nav>
+    </header>
+
+    <main role="main" class="content">
+        @RenderBody()
+    </main>
+
+    <footer>
+        <hr />
+        <p>&copy; @DateTime.Now.Year - MVC Example</p>
+    </footer>
+
+    <!-- Optional: include your JavaScript files here -->
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

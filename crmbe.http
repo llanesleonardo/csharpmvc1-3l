@@ -1,0 +1,6 @@
+@crmbe_HostAddress = http://localhost:5083
+
+GET {{crmbe_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
